@@ -1,5 +1,5 @@
-#include "schedulers.h"
 #include "cpu.h"
+#include "schedulers.h"
 #define arrSize 20
 
 typedef struct {
