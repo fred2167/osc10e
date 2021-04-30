@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "task.h"
+
 // length of a time quantum
 #define QUANTUM 10
 
