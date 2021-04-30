@@ -62,6 +62,7 @@ void add(char *name, int priority, int burst) {
 
 // invoke the scheduler
 void schedule() {
+  printf("========Priority=========\n");
   int time = 0;
   while (size > 0) {
     Task *t = pop();

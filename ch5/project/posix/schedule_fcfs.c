@@ -28,6 +28,7 @@ void add(char *name, int priority, int burst) {
         Time is now: 20
 */
 void schedule() {
+  printf("========FCFS=========\n");
   int time = 0;
   for (int i = 0; i < size; i++) {
     Task *t = arr[i];

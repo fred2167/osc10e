@@ -41,6 +41,7 @@ Task *pop() {
         Time is now: 20
 */
 void schedule() {
+    printf("========RR=========\n");
   int time = 0;
   while (size != 0) {
     Task *t = pop();
