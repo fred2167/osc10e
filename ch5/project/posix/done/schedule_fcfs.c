@@ -4,6 +4,15 @@
 Task* arr[arrSize];
 int size = 0;
 
+Task* createTask(char* name, int priority, int burst){
+    Task* t = malloc(sizeof(Task));
+    t->name = name;
+    t->priority = priority;
+    t->burst = burst;
+    t->tid = 0;
+    return t;
+}
+
 // add a task to the list 
 void add(char *name, int priority, int burst){
     Task* newTask = createTask(name, priority, burst);
@@ -19,7 +28,6 @@ void add(char *name, int priority, int burst){
         Time is now: 20
 */
 void schedule(){
-    int idx = 0;
     int time = 0;
     for (int i = 0; i < size; i++){
         Task* t = arr[i];
