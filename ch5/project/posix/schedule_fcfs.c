@@ -20,8 +20,7 @@ void add(char *name, int priority, int burst) {
     printf("ERROR: array FULL\n");
     return;
   }
-  arr[size++]  = createTask(name, priority, burst);
-
+  arr[size++] = createTask(name, priority, burst);
 }
 
 // invoke the scheduler
