@@ -52,15 +52,13 @@ Task *pop() {
 
 // add a task to the list
 void add(char *name, int priority, int burst) {
-
-  // use **-burst** as priority
-  PriorityNode *newNode = createNode(-burst, name, priority, burst);
-
   if (size >= arrSize) {
     printf("ERROR: array FULL\n");
     return;
   }
-  arr[size++] = newNode;
+
+  // use **-burst** as priority
+  arr[size++] = createNode(-burst, name, priority, burst);
 }
 
 // invoke the scheduler

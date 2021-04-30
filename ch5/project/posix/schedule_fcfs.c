@@ -16,12 +16,12 @@ Task *createTask(char *name, int priority, int burst) {
 
 // add a task to the list
 void add(char *name, int priority, int burst) {
-  Task *newTask = createTask(name, priority, burst);
   if (size >= arrSize) {
     printf("ERROR: array FULL\n");
     return;
   }
-  arr[size++] = newTask;
+  arr[size++]  = createTask(name, priority, burst);
+
 }
 
 // invoke the scheduler
