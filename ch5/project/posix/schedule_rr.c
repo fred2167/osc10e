@@ -1,6 +1,6 @@
 #include "cpu.h"
 #include "schedulers.h"
-#define arrSize 10
+#define arrSize 20
 
 Task *arr[arrSize];
 int first, last, size = 0;
