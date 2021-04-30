@@ -10,40 +10,39 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "task.h"
 #include "list.h"
 #include "schedulers.h"
+#include "task.h"
 
-#define SIZE    100
+#define SIZE 100
 
-int main(int argc, char *argv[])
-{
-    FILE *in;
-    char *temp;
-    char task[SIZE];
+int main(int argc, char *argv[]) {
+  FILE *in;
+  char *temp;
+  char task[SIZE];
 
-    char *name;
-    int priority;
-    int burst;
+  char *name;
+  int priority;
+  int burst;
 
-    in = fopen(argv[1],"r");
-    
-    while (fgets(task,SIZE,in) != NULL) {
-        temp = strdup(task);
-        name = strsep(&temp,",");
-        priority = atoi(strsep(&temp,","));
-        burst = atoi(strsep(&temp,","));
+  in = fopen(argv[1], "r");
 
-        // add the task to the scheduler's list of tasks
-        add(name,priority,burst);
+  while (fgets(task, SIZE, in) != NULL) {
+    temp = strdup(task);
+    name = strsep(&temp, ",");
+    priority = atoi(strsep(&temp, ","));
+    burst = atoi(strsep(&temp, ","));
 
-        free(temp);
-    }
+    // add the task to the scheduler's list of tasks
+    add(name, priority, burst);
 
-    fclose(in);
+    free(temp);
+  }
 
-    // invoke the scheduler
-    schedule();
+  fclose(in);
 
-    return 0;
+  // invoke the scheduler
+  schedule();
+
+  return 0;
 }
