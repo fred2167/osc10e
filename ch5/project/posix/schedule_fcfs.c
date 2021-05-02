@@ -30,6 +30,7 @@ void add(char *name, int priority, int burst) {
 void schedule() {
   printf("========FCFS=========\n");
   int time = 0;
+  double count = -1;
   for (int i = 0; i < size; i++) {
     Task *t = arr[i];
     time += t->burst;
@@ -37,6 +38,7 @@ void schedule() {
     printf("\tTime is now: %d\n", time);
     free(t->name);
     free(t);
+    count++;
   }
-  size = 0;
+   printf("CPU Utilization: %.2f%\n", (time/(count+time))*100);
 }

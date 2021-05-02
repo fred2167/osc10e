@@ -6,6 +6,7 @@
 #define TASK_H
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 // representation of a task
 typedef struct task {
@@ -13,6 +14,7 @@ typedef struct task {
     int tid;
     int priority;
     int burst;
+    bool hasSamePriority;
 } Task;
 
 #endif
