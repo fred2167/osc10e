@@ -49,13 +49,12 @@ Task *pop() {
   }
   size--;
 
-    for (int i = 0; i < size; i++){
-        if (arr[i]->task->priority == highestPriority){
-            highestTask->hasSamePriority = true;
-        }
+  for (int i = 0; i < size; i++) {
+    if (arr[i]->task->priority == highestPriority) {
+      highestTask->hasSamePriority = true;
     }
+  }
 
-    
   return highestTask;
 }
 
@@ -76,20 +75,21 @@ void schedule() {
   double count = 0;
   while (size > 0) {
     Task *t = pop();
-    // printf("[%s] [%d] [%d] %d\n", t->name, t->priority, t->burst, t->hasSamePriority);
+    // printf("[%s] [%d] [%d] %d\n", t->name, t->priority, t->burst,
+    // t->hasSamePriority);
 
-    if (t->hasSamePriority && t->burst - QUANTUM > 0){
-        time += QUANTUM;
-        run(t, QUANTUM);
-        add(t->name, t->priority, t->burst - QUANTUM);
-    }else{
-        time += t->burst;
-        run(t, t->burst);
-        free(t->name);
+    if (t->hasSamePriority && t->burst - QUANTUM > 0) {
+      time += QUANTUM;
+      run(t, QUANTUM);
+      add(t->name, t->priority, t->burst - QUANTUM);
+    } else {
+      time += t->burst;
+      run(t, t->burst);
+      free(t->name);
     }
     printf("\tTime is now: %d\n", time);
     free(t);
     count++;
   }
-  printf("CPU Utilization: %.2f%\n", (time/(count+time))*100);
+  printf("CPU Utilization: %.2f%\n", (time / (count + time)) * 100);
 }

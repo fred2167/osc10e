@@ -40,5 +40,5 @@ void schedule() {
     free(t);
     count++;
   }
-   printf("CPU Utilization: %.2f%\n", (time/(count+time))*100);
+  printf("CPU Utilization: %.2f%\n", (time / (count + time)) * 100);
 }
