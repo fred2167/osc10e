@@ -1,0 +1,4 @@
+Expected grade: 27/25
+
+5 for each algorithm
+2 extra points for calculating CPU utilization for each algorithm
