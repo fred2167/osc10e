@@ -68,7 +68,7 @@ void schedule() {
   double count = 0;
   while (size > 0) {
     Task *t = pop();
-    count++;
+    count++; // track dispatcher's time
     time += t->burst;
     run(t, t->burst);
     printf("\tTime is now: %d\n", time);

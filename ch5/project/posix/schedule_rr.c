@@ -52,16 +52,14 @@ void schedule() {
     if (diffTime > 0) {
       run(t, QUANTUM);
       time += QUANTUM;
-      printf("\tTime is now: %d\n", time);
       add(t->name, t->priority, diffTime);
-      free(t);
     } else {
       run(t, t->burst);
       time += t->burst;
-      printf("\tTime is now: %d\n", time);
       free(t->name);
-      free(t);
     }
+    printf("\tTime is now: %d\n", time);
+    free(t);
   }
   printf("CPU Utilization: %.2f%\n", (time / (count - 1 + time)) * 100);
 }
