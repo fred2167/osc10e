@@ -41,10 +41,12 @@ Task *pop() {
         Time is now: 20
 */
 void schedule() {
-  printf("========RR=========\n");
+  printf("======================RR======================\n");
   int time = 0;
+  double count = 0;
   while (size != 0) {
     Task *t = pop();
+    count++;
     int diffTime = t->burst - QUANTUM;
 
     if (diffTime > 0) {
@@ -61,4 +63,5 @@ void schedule() {
       free(t);
     }
   }
+  printf("CPU Utilization: %.2f%\n", (time / (count - 1 + time)) * 100);
 }

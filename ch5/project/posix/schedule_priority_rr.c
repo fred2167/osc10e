@@ -70,11 +70,12 @@ void add(char *name, int priority, int burst) {
 
 // invoke the scheduler
 void schedule() {
-  printf("========Priority RoundRobin=========\n");
+  printf("===============Priority RoundRobin===============\n");
   int time = 0;
   double count = 0;
   while (size > 0) {
     Task *t = pop();
+    count++;
     // printf("[%s] [%d] [%d] %d\n", t->name, t->priority, t->burst,
     // t->hasSamePriority);
 
@@ -89,7 +90,6 @@ void schedule() {
     }
     printf("\tTime is now: %d\n", time);
     free(t);
-    count++;
   }
-  printf("CPU Utilization: %.2f%\n", (time / (count + time)) * 100);
+  printf("CPU Utilization: %.2f%\n", (time / (count - 1 + time)) * 100);
 }

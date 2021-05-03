@@ -62,14 +62,17 @@ void add(char *name, int priority, int burst) {
 
 // invoke the scheduler
 void schedule() {
-  printf("========Priority=========\n");
+  printf("===================Priority===================\n");
   int time = 0;
+  double count = 0;
   while (size > 0) {
     Task *t = pop();
+    count++;
     time += t->burst;
     run(t, t->burst);
     printf("\tTime is now: %d\n", time);
     free(t->name);
     free(t);
   }
+  printf("CPU Utilization: %.2f\%\n", (time / (count - 1 + time)) * 100);
 }

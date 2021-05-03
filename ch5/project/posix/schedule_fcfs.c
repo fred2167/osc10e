@@ -28,17 +28,17 @@ void add(char *name, int priority, int burst) {
         Time is now: 20
 */
 void schedule() {
-  printf("========FCFS=========\n");
+  printf("=====================FCFS=====================\n");
   int time = 0;
-  double count = -1;
+  double count = 0;
   for (int i = 0; i < size; i++) {
     Task *t = arr[i];
+    count++;
     time += t->burst;
     run(t, t->burst);
     printf("\tTime is now: %d\n", time);
     free(t->name);
     free(t);
-    count++;
   }
-  printf("CPU Utilization: %.2f%\n", (time / (count + time)) * 100);
+  printf("CPU Utilization: %.2f%\n", (time / (count - 1 + time)) * 100);
 }

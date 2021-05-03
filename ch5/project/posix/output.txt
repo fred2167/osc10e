@@ -1,4 +1,4 @@
-========FCFS=========
+=====================FCFS=====================
 Running task = [T1] [4] [20] for 20 units.
 	Time is now: 20
 Running task = [T2] [3] [25] for 25 units.
@@ -15,7 +15,8 @@ Running task = [T7] [3] [30] for 30 units.
 	Time is now: 145
 Running task = [T8] [10] [25] for 25 units.
 	Time is now: 170
-========SJF=========
+CPU Utilization: 96.05%
+=====================SJF======================
 Running task = [T6] [1] [10] for 10 units.
 	Time is now: 10
 Running task = [T4] [5] [15] for 15 units.
@@ -32,24 +33,8 @@ Running task = [T8] [10] [25] for 25 units.
 	Time is now: 140
 Running task = [T7] [3] [30] for 30 units.
 	Time is now: 170
-========Priority=========
-Running task = [T8] [10] [25] for 25 units.
-	Time is now: 25
-Running task = [T4] [5] [15] for 15 units.
-	Time is now: 40
-Running task = [T5] [5] [20] for 20 units.
-	Time is now: 60
-Running task = [T1] [4] [20] for 20 units.
-	Time is now: 80
-Running task = [T2] [3] [25] for 25 units.
-	Time is now: 105
-Running task = [T3] [3] [25] for 25 units.
-	Time is now: 130
-Running task = [T7] [3] [30] for 30 units.
-	Time is now: 160
-Running task = [T6] [1] [10] for 10 units.
-	Time is now: 170
-========RR=========
+CPU Utilization: 96.05%
+======================RR======================
 Running task = [T1] [4] [20] for 10 units.
 	Time is now: 10
 Running task = [T2] [3] [25] for 10 units.
@@ -88,7 +73,26 @@ Running task = [T7] [3] [10] for 10 units.
 	Time is now: 165
 Running task = [T8] [10] [5] for 5 units.
 	Time is now: 170
-========Priority RoundRobin=========
+CPU Utilization: 90.43%
+===================Priority===================
+Running task = [T8] [10] [25] for 25 units.
+	Time is now: 25
+Running task = [T4] [5] [15] for 15 units.
+	Time is now: 40
+Running task = [T5] [5] [20] for 20 units.
+	Time is now: 60
+Running task = [T1] [4] [20] for 20 units.
+	Time is now: 80
+Running task = [T2] [3] [25] for 25 units.
+	Time is now: 105
+Running task = [T3] [3] [25] for 25 units.
+	Time is now: 130
+Running task = [T7] [3] [30] for 30 units.
+	Time is now: 160
+Running task = [T6] [1] [10] for 10 units.
+	Time is now: 170
+CPU Utilization: 96.05%
+===============Priority RoundRobin===============
 Running task = [T8] [10] [25] for 25 units.
 	Time is now: 25
 Running task = [T4] [5] [15] for 10 units.
@@ -121,3 +125,4 @@ Running task = [T7] [3] [10] for 10 units.
 	Time is now: 160
 Running task = [T6] [1] [10] for 10 units.
 	Time is now: 170
+CPU Utilization: 91.89%
