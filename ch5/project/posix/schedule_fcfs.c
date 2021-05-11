@@ -4,6 +4,7 @@
 
 Task *arr[arrSize];
 int size = 0;
+int first = 0;
 
 Task *createTask(char *name, int priority, int burst) {
   Task *t = malloc(sizeof(Task));
@@ -23,6 +24,11 @@ void add(char *name, int priority, int burst) {
   arr[size++] = createTask(name, priority, burst);
 }
 
+Task* pop(){
+  size--;
+  return arr[first++];
+}
+
 // invoke the scheduler
 /* Running task = [T1] [4] [20] for 20 units.
         Time is now: 20
@@ -31,8 +37,8 @@ void schedule() {
   printf("=====================FCFS=====================\n");
   int time = 0;
   double count = 0;
-  for (int i = 0; i < size; i++) {
-    Task *t = arr[i];
+  while (size > 0) {
+    Task *t = pop();
     count++;
     time += t->burst;
     run(t, t->burst);
@@ -40,5 +46,5 @@ void schedule() {
     free(t->name);
     free(t);
   }
-  printf("CPU Utilization: %.2f%\n", (time / (count - 1 + time)) * 100);
+  printf("CPU Utilization: %.2f%%\n", (time / (count - 1 + time)) * 100);
 }
