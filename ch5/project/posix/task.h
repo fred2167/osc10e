@@ -15,6 +15,9 @@ typedef struct task {
     int priority;
     int burst;
     bool hasSamePriority;
+    int turnAroundTime;
+    int waitTime;
+    int responseTime;
 } Task;
 
 #endif
