@@ -24,7 +24,7 @@ void add(char *name, int priority, int burst) {
   arr[size++] = createTask(name, priority, burst);
 }
 
-Task* pop(){
+Task *pop() {
   size--;
   return arr[first++];
 }

@@ -61,5 +61,5 @@ void schedule() {
     printf("\tTime is now: %d\n", time);
     free(t);
   }
-  printf("CPU Utilization: %.2f%\n", (time / (count - 1 + time)) * 100);
+  printf("CPU Utilization: %.2f%%\n", (time / (count - 1 + time)) * 100);
 }
